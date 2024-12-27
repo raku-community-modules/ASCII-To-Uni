@@ -3,7 +3,7 @@
 NAME
 ====
 
-ASCII::To::Uni - blah blah blah
+ASCII::To::Uni - convert operators in Raku source files from ASCII to Unicode
 
 SYNOPSIS
 ========
@@ -37,6 +37,11 @@ convert-string
 --------------
 
 The `convert-string` subroutine takes read-write string and converts it accordingly to operator table.
+
+HISTORY
+-------
+
+This distribution started as `Texas::To::Uni`, but since the use of the term "Texas" has been deprecated in favor of "ASCII", it felt like a good opportunity to change the name when reviving it as a Raku Community module. Note that the old name `Texas::To::Uni` is still available as a use target.
 
 AUTHOR
 ======
