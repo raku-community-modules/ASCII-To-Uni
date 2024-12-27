@@ -1,2 +1,2 @@
-.projectile
-*.uni.*
+.precomp/
+/ASCII-To-Uni-*

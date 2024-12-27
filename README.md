@@ -1,30 +1,54 @@
-Texas::To::Uni
-====================
+[![Actions Status](https://github.com/raku-community-modules/ASCII-To-Uni/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/ASCII-To-Uni/actions) [![Actions Status](https://github.com/raku-community-modules/ASCII-To-Uni/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/ASCII-To-Uni/actions) [![Actions Status](https://github.com/raku-community-modules/ASCII-To-Uni/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/ASCII-To-Uni/actions)
 
-**WORK IN PROGRESS**
+NAME
+====
 
-This package provides you a basic(and incomplete) way to convert operators in your Perl 6-related files from Texas(ASCII-based) version to Unicode symbol version.
+ASCII::To::Uni - blah blah blah
 
-It doesn't support some operators and have some limitations, but it will be improved in the future.
+SYNOPSIS
+========
 
-Usage
-====================
-
-The most simple example is:
-
-``` perl6
-use Texas::To::Uni;
+```raku
+use ASCII::To::Uni;
 
 convert-file($filename);
 ```
 
-This module has two basic subroutines:
+DESCRIPTION
+===========
 
- * `convert-file` - it takes file name and by default points output to a new file with extension like `old-file-name.uni.old-extension`. New path can be set in `:$new-path` named argument. It can rewrite file if `:$rewrite` flag was set. However, rewriting is not recommended, since this module is still buggy and can mess up your work.
+The `ASCII::To::Uni` distribution provides a basic (and incomplete) way to convert operators in your Raku-related source files from an ASCII version to Unicode symbol version.
 
- * `convert-string` - internal function that takes read-write string and converts it accordingly to operator table.
+It doesn't support some operators and has some limitations.
 
-Contribution
-====================
+SUBROUTINES
+===========
 
-Pull requests are welcome: new tests, fixes, improvements or just suggestions in the Issue.
+This distribution has two basic subroutines:
+
+convert-file
+------------
+
+The `convert-file` subroutine takes a file name and by default point s output to a new file with extension like `file-name.uni.xtension`.
+
+A different path can be set with the `:new-path` named argument. It can rewrite file if the named argument `:rewrite` was specified with a `True` value. However, rewriting is not recommended, since this distribution way still be buggy and can mess up your work.
+
+convert-string
+--------------
+
+The `convert-string` subroutine takes read-write string and converts it accordingly to operator table.
+
+AUTHOR
+======
+
+Alexander Kiryuhin
+
+COPYRIGHT AND LICENSE
+=====================
+
+Copyright 2016 - 2017 Alexander Kiryuhin
+
+Copyright 2024 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+

@@ -1,0 +1,7 @@
+Revision history for ASCII::To::Uni
+
+{{$NEXT}}
+    - Renamed from Texas::To::Uni, but kept Texas::To::Uni as a
+      use target for compatibility
+    - Initial version as a Raku Community module
+

@@ -1,16 +1,17 @@
-use v6;
-
 use Test;
-use Texas::To::Uni;
+
+use ASCII::To::Uni;
 
 plan 1;
 
-my Str $filename = 't/test-file1.p6';
-my Str $new-name = 't/test-file1.uni.p6';
+my Str $filename = 't/test-file1.raku';
+my Str $new-name = 't/test-file1.uni.raku';
 my Str $valid-output;
 
+LEAVE unlink $new-name;
+
 # Valid output.
-my $proc-v = Proc::Async.new('perl6', $filename);
+my $proc-v = Proc::Async.new('raku', $filename);
 
 $proc-v.stdout.tap(-> $v { $valid-output = $v; });
 $proc-v.stderr.tap(-> $v { fail $v });
@@ -22,7 +23,7 @@ convert-file($filename);
 # # # Converted output.
 my Str $converted;
 
-my $proc-c = Proc::Async.new('perl6', $new-name);
+my $proc-c = Proc::Async.new('raku', $new-name);
 
 $proc-c.stdout.tap(-> $v { $converted = $v; });
 $proc-c.stderr.tap(-> $v { fail $v });
@@ -33,3 +34,5 @@ say $valid-output;
 say $converted;
 
 ok $valid-output eq $converted;
+
+# vim: expandtab shiftwidth=4
